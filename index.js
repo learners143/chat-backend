@@ -16,6 +16,10 @@ const io = new Server(server, {
 // Enable CORS for all routes
 app.use(cors());
 app.use(express.json());
+app.get("/", (req,res) => {
+  res.send("It's working fine")
+})
+
 
 io.on("connection", (socket) => {
   console.log('A user connected');
